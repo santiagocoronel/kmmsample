@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun init() {
+        binding.textViewDeviceInformation.text = Greeting().greeting()
+
         viewModel.randomNumber.observe(this, Observer {
             binding.textViewRandomNumber.text = it.toString()
         })
@@ -55,5 +57,6 @@ class MainActivity : AppCompatActivity() {
         binding.buttonLogin.setOnClickListener {
             viewModel.executeGetUserProfile()
         }
+
     }
 }
