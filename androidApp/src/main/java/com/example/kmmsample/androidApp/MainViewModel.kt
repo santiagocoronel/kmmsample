@@ -39,7 +39,7 @@ class MainViewModel(
     fun executeGetUserProfile() {
         viewModelScope.launch {
             loginUseCase.bind(
-                "drogocoronel@hotmail.com",
+                "elonmusk@tesla.com",
                 "HkiNj2tEmCUSanSjGsYkOg==",
                 DeviceDummy.getAndroid()
             )
