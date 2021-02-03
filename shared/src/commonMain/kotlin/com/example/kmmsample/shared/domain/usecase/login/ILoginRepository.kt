@@ -5,6 +5,8 @@ import com.example.kmmsample.shared.domain.usecase.login.model.UserProfile
 import kotlinx.coroutines.flow.Flow
 
 interface ILoginRepository {
+
+    @Throws(Exception::class)
     suspend fun login(
         email: String,
         password: String,
