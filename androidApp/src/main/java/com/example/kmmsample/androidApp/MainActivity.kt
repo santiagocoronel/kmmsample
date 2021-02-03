@@ -41,10 +41,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         viewModel.randomNumber.observe(this, Observer {
-            Toast.makeText(this, "$it", Toast.LENGTH_SHORT).show()
+            binding.textViewRandomNumber.text = it.toString()
         })
         viewModel.userProfile.observe(this, Observer {
-            Toast.makeText(this, "${it.toString()}", Toast.LENGTH_SHORT).show()
+            binding.textViewFirstName.text = it.firstname
+            binding.textViewLastName.text = it.lastname
+            binding.textViewEmail.text = it.email
+            binding.textViewNickName.text = it.nick
         })
         binding.buttonRandomNumber.setOnClickListener {
             viewModel.executeGetRandomNumber()
