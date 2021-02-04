@@ -6,10 +6,10 @@
 //  Copyright © 2021 orgName. All rights reserved.
 //
 
-import SwiftUI
 import Foundation
 import UIKit
 import shared
+import RxSwift
 
 class MainViewController: UIViewController {
     
@@ -23,10 +23,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var labelEmail: UILabel!
     @IBOutlet weak var buttonLogin: UIButton!
     
+    private var subscriptionRandomNumber = DisposeBag()
+    private var subscriptionUserProfile = DisposeBag()
     
-    @ObservedObject var mainViewModel : MainViewModel
-    
-    
+    var mainViewModel : MainViewModel
     
     required init?(coder aDecoder: NSCoder){
         
@@ -45,24 +45,36 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelDeviceInformation.text = greet().description
+        labelDeviceInformation.text = Greeting.init().greeting()
+        
+        mainViewModel.getRandomNumber().subscribe (onNext:{ number in
+            self.showRandomNumber(number: number)
+        })
+        
+        mainViewModel.getUserProfile().subscribe(onNext:{ userProfile in
+            self.showProfileInformation(userProfile: userProfile)
+        })
         
     }
     
     
     @IBAction func onClickRandomNumber(_ sender: Any) {
         mainViewModel.executeRandomNumber()
-        self.labelRandomNumber.text = String(describing: mainViewModel.getRandomNumber())
     }
- 
+    
     
     @IBAction func onClickLogin(_ sender: Any) {
         mainViewModel.executeLogin()
-        let userProfile =  mainViewModel.getUserProfile()
-        labelFirstName.text = userProfile?.firstname
-        labelLastName.text = userProfile?.lastname
-        labelNickName.text = userProfile?.nick
-        labelEmail.text = userProfile?.email
     }
     
+    func showRandomNumber(number : Int){
+        self.labelRandomNumber.text = String(describing: number)
+    }
+    
+    func showProfileInformation(userProfile : UserProfile){
+        labelFirstName.text = userProfile.firstname
+        labelLastName.text = userProfile.lastname
+        labelNickName.text = userProfile.nick
+        labelEmail.text = userProfile.email
+    }
 }
