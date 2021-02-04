@@ -11,12 +11,6 @@
 		441A62AA25CA6C4D0020307D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441A62A925CA6C4D0020307D /* Main.storyboard */; };
 		441A62AE25CA6D9C0020307D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A62AD25CA6D9C0020307D /* MainViewController.swift */; };
 		441A62B525CA72340020307D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A62B425CA72340020307D /* MainViewModel.swift */; };
-		44DAE5D625CB770B006B7830 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DAE5D325CB770B006B7830 /* RxCocoa.framework */; };
-		44DAE5D725CB770B006B7830 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44DAE5D325CB770B006B7830 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		44DAE5D825CB770B006B7830 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DAE5D425CB770B006B7830 /* RxRelay.framework */; };
-		44DAE5D925CB770B006B7830 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44DAE5D425CB770B006B7830 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		44DAE5DA25CB770B006B7830 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DAE5D525CB770B006B7830 /* RxSwift.framework */; };
-		44DAE5DB25CB770B006B7830 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44DAE5D525CB770B006B7830 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7555FF7F242A565900829871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF7E242A565900829871 /* AppDelegate.swift */; };
 		7555FF81242A565900829871 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF80242A565900829871 /* SceneDelegate.swift */; };
 		7555FF85242A565B00829871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7555FF84242A565B00829871 /* Assets.xcassets */; };
@@ -52,10 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				44DAE5DB25CB770B006B7830 /* RxSwift.framework in Embed Frameworks */,
-				44DAE5D725CB770B006B7830 /* RxCocoa.framework in Embed Frameworks */,
 				7555FFB3242A642300829871 /* shared.framework in Embed Frameworks */,
-				44DAE5D925CB770B006B7830 /* RxRelay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,9 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44DAE5DA25CB770B006B7830 /* RxSwift.framework in Frameworks */,
-				44DAE5D825CB770B006B7830 /* RxRelay.framework in Frameworks */,
-				44DAE5D625CB770B006B7830 /* RxCocoa.framework in Frameworks */,
 				7555FFB2242A642300829871 /* shared.framework in Frameworks */,
 				2D3112491BE3296B53AF5565 /* libPods-iosApp.a in Frameworks */,
 			);
